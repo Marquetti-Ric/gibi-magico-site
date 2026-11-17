@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gibi Mágico</title>
+    <meta
+      name="description"
+      content="App onde a criança conta a história e o Tinta desenha o gibi. Baixe o APK para Android."
+    />
+    <style>
+      :root {
+        --tinta: #241c1c;
+        --amarelo: #ffd93d;
+        --azul: #4dabf7;
+        --verde: #51cf66;
+        --rosa: #ff8fab;
+        --papel: #fff8e7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 20px 16px 60px;
+        background: var(--papel);
+        color: var(--tinta);
+        font-family: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+        font-weight: 700;
+        line-height: 1.5;
+        background-image: radial-gradient(#0000000d 1px, transparent 1px);
+        background-size: 18px 18px;
+      }
+
+      .folha {
+        max-width: 560px;
+        margin: 0 auto;
+        display: grid;
+        gap: 16px;
+      }
+
+      .cartao {
+        background: #fff;
+        border: 4px solid var(--tinta);
+        border-radius: 20px;
+        box-shadow: 0 7px 0 var(--tinta);
+        padding: 20px;
+      }
+
+      .capa {
+        background: var(--amarelo);
+        text-align: center;
+      }
+
+      h1 {
+        font-size: clamp(34px, 11vw, 48px);
+        margin: 6px 0 2px;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+        -webkit-text-stroke: 1px var(--tinta);
+      }
+
+      h2 {
+        font-size: 21px;
+        margin: 0 0 10px;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0 0 12px;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .botao {
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        color: var(--tinta);
+        background: var(--verde);
+        border: 4px solid var(--tinta);
+        border-radius: 16px;
+        box-shadow: 0 5px 0 var(--tinta);
+        padding: 16px;
+        font-size: 21px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .botao:active {
+        transform: translateY(4px);
+        box-shadow: 0 1px 0 var(--tinta);
+      }
+
+      .versao {
+        margin-top: 12px;
+        font-size: 14px;
+        opacity: 0.8;
+      }
+
+      ol {
+        margin: 0;
+        padding-left: 22px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .selo {
+        display: inline-block;
+        background: var(--azul);
+        border: 3px solid var(--tinta);
+        border-radius: 999px;
+        padding: 3px 12px;
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .exemplos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        font-size: 15px;
+      }
+
+      .exemplo {
+        background: var(--papel);
+        border: 3px dashed var(--tinta);
+        border-radius: 14px;
+        padding: 10px 12px;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 13px;
+        opacity: 0.7;
+      }
+
+      a {
+        color: #1864ab;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        /* O app é de criança e nasceu claro; no escuro a gente só baixa o
+           brilho do papel, sem inverter os traços. */
+        body {
+          background: #2b2522;
+        }
+        .cartao {
+          background: #fffdf6;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="folha">
+      <div class="cartao capa">
+        <div style="font-size: 62px; line-height: 1">✏️</div>
+        <h1>Gibi Mágico</h1>
+        <p style="font-size: 18px; font-weight: 900">
+          A criança conta a história. O Tinta desenha o gibi.
+        </p>
+        <a class="botao" id="baixar" href="#">⬇️ Baixar para Android</a>
+        <div class="versao" id="versao">Procurando a versão mais nova…</div>
+      </div>
+
+      <div class="cartao">
+        <h2>Como é</h2>
+        <p>
+          A criança fala ou escreve o que acontece — “eu e meu irmão estávamos em casa e o céu
+          estava chuvoso” — e o quadrinho aparece desenhado: os dois personagens, a sala, a chuva na
+          janela.
+        </p>
+        <div class="exemplos">
+          <div class="exemplo">🎤 Dá para ditar falando, sem digitar nada</div>
+          <div class="exemplo">🧒 Personagens que a criança monta do zero</div>
+          <div class="exemplo">✈️ Funciona sem internet, depois de instalado</div>
+          <div class="exemplo">📄 Exporta o gibi em PDF para imprimir</div>
+        </div>
+      </div>
+
+      <div class="cartao">
+        <h2>Como instalar</h2>
+        <ol>
+          <li>Toque em <strong>Baixar para Android</strong> acima.</li>
+          <li>
+            O Android vai avisar que o arquivo pode ser perigoso porque não veio da Play Store.
+            Escolha <strong>Baixar mesmo assim</strong>.
+          </li>
+          <li>
+            Abra o arquivo baixado. Na primeira vez o celular pede para
+            <strong>permitir instalar apps desta fonte</strong> — é uma chave que você liga e já
+            pode desligar depois.
+          </li>
+          <li>Instale, abra o app e digite o <strong>código de convite</strong>.</li>
+        </ol>
+        <p style="margin-top: 12px">
+          <span class="selo">Precisa de iPhone?</span> Ainda não tem versão para iOS.
+        </p>
+      </div>
+
+      <div class="cartao">
+        <h2>Código de convite</h2>
+        <p>
+          O app não tem cadastro nem senha: ele é liberado por um código, uma única vez, no primeiro
+          uso. Depois disso funciona offline.
+        </p>
+        <p>Não tem código? Peça para quem te indicou o app.</p>
+      </div>
+
+      <footer>
+        Feito para a família. Os personagens são desenhados pelo app — nada de personagem de gibi de
+        ninguém.
+        <br /><br />
+        <a href="privacidade.html">Política de privacidade</a>
+      </footer>
+    </div>
+
+    <script>
+      // A página é estática; só o número da versão é lido do mesmo arquivo que
+      // o app consulta, para não existirem duas verdades sobre o que está no ar.
+      // O APK fica ao lado desta página, no mesmo site — caminho relativo, que
+      // continua certo se um dia o endereço do site mudar.
+      const PADRAO = 'gibi-magico.apk'
+      const botao = document.getElementById('baixar')
+      const rotulo = document.getElementById('versao')
+      botao.href = PADRAO
+
+      fetch('versao.json?t=' + Date.now(), { cache: 'no-store' })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((v) => {
+          if (!v || !v.versao) throw new Error('sem versao.json')
+          if (v.apk) botao.href = v.apk
+          const tamanho = v.tamanhoMb ? ' · ' + v.tamanhoMb + ' MB' : ''
+          const data = v.publicadoEm ? ' · ' + v.publicadoEm.split('-').reverse().join('/') : ''
+          rotulo.textContent = 'Versão ' + v.versao + tamanho + data
+        })
+        .catch(() => {
+          rotulo.textContent = 'Baixa sempre a versão mais nova publicada.'
+        })
+    </script>
+  </body>
+</html>
